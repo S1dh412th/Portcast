@@ -1,4 +1,4 @@
-# Portcast API
+# Portcast Assignment API
 
 A FastAPI-based service for fetching, storing, and analyzing paragraphs with integrated dictionary functionality and Redis caching.
 
