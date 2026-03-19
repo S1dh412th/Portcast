@@ -1,0 +1,25 @@
+version: '3.8'
+
+services:
+  api:
+    build: .
+    ports:
+      - "8000:8000"
+    environment:
+      - PORTCAST_DATABASE__URL=sqlite+pysqlite:////data/app.db
+      - PORTCAST_REDIS__URL=redis://redis:6379
+    volumes:
+      - portcast_data:/data
+    depends_on:
+      - redis
+
+  redis:
+    image: redis:7-alpine
+    ports:
+      - "6379:6379"
+    volumes:
+      - redis_data:/data
+
+volumes:
+  portcast_data:
+  redis_data:

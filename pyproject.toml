@@ -1,0 +1,34 @@
+[project]
+name = "portcast"
+version = "0.1.0"
+description = "Paragraph fetch/search/dictionary API"
+readme = "README.md"
+requires-python = ">=3.11"
+authors = [{name = "Your Name", email = "your.email@example.com"}]
+dependencies = [
+	"fastapi>=0.115.0",
+	"uvicorn[standard]>=0.30.0",
+	"sqlalchemy>=2.0.0",
+	"pydantic>=2.7.0",
+	"pydantic-settings>=2.0.0",
+	"httpx>=0.27.0",
+	"python-dotenv>=1.0.0",
+	"redis>=5.0.0",
+]
+
+[tool.poetry]
+package-mode = false
+
+[tool.poetry.group.dev.dependencies]
+pytest = ">=8.0.0"
+pytest-asyncio = ">=0.23.0"
+respx = ">=0.21.0"
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]
+asyncio_mode = "auto"
+
+[build-system]
+requires = ["poetry-core>=2.0.0"]
+build-backend = "poetry.core.masonry.api"
+ 
